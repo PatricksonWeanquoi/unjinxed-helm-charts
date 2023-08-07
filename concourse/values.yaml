@@ -1,0 +1,24 @@
+concourse:
+  web:
+    enabled: true
+    externalUrl: "unjinxed.dev:8080"
+  worker:
+    enabled: true
+  service:
+    web:
+      type: NodePort
+      ports:
+        http: 8080
+  postgresql:
+    auth:
+      password: <+serviceVariables.postgresqlPassword>
+  secrets:
+    localUsers: <+serviceVariables.concourseUsername>:<+serviceVariables.concoursePassword>
+
+  ingress:
+    enabled: true
+    tls: true
+    hostname: unjinxed.dev:8080
+    annotations:
+        nginx.ingress.kubernetes.io/rewrite-target: /
+        kubernetes.io/ingress.class: "nginx" 

@@ -1,0 +1,6 @@
+dependencies:
+- name: concourse
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 2.2.1
+digest: sha256:93a55986c2b20905231a2476d6508f0c8bb302275ce8ed5f8a2e9f652a5a220c
+generated: "2023-06-20T22:16:26.932634-04:00"
