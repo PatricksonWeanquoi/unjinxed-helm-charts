@@ -1,14 +1,12 @@
 concourse:
   web:
     enabled: true
-    externalUrl: "unjinxed.dev:8081"
+    externalUrl: "unjinxed.dev:8080"
   worker:
     enabled: true
   service:
     web:
       type: NodePort
-      ports:
-        http: 8080
   postgresql:
     auth:
       password: <+serviceVariables.postgresqlPassword>
