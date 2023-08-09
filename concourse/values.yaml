@@ -17,8 +17,16 @@ concourse:
 
   ingress:
     enabled: true
-    tls: true
-    hostname: concourse.local
+    hostname: unjinxed.dev
     annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /
         kubernetes.io/ingress.class: "nginx" 
+    extraRules:
+      host: unjinxed.dev
+      http:
+        path: /
+        backend:
+          service:
+            name: concourse-svc
+            port:
+              name: 8080
