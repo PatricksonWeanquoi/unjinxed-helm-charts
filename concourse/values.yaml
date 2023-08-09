@@ -1,7 +1,7 @@
 concourse:
   web:
     enabled: true
-    externalUrl: "192.168.1.101:8080"
+    externalUrl: "192.168.1.101"
   worker:
     enabled: true
   service:
