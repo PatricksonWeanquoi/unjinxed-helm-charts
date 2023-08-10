@@ -1,9 +1,11 @@
 concourse:
   web:
     enabled: true
-    externalUrl: "192.168.1.101"
+    externalUrl: "192.168.1.101:8080"
   worker:
     enabled: true
+    containerPorts:
+      http: 8081
   service:
     web:
       type: NodePort
