@@ -4,13 +4,13 @@ concourse:
     # externalUrl: "192.168.1.101:8080"
   worker:
     enabled: true
-    containerPorts:
-      http: 8081
+    # containerPorts:
+    #   http: 8081
   service:
     web:
       type: NodePort
       ports:
-        http: 8080
+        http: 8081
   postgresql:
     auth:
       password: <+serviceVariables.postgresqlPassword>
