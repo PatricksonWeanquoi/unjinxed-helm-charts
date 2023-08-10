@@ -1,7 +1,7 @@
 concourse:
   web:
     enabled: true
-    externalUrl: "192.168.1.101:8080"
+    # externalUrl: "192.168.1.101:8080"
   worker:
     enabled: true
     containerPorts:
@@ -9,6 +9,8 @@ concourse:
   service:
     web:
       type: NodePort
+      ports:
+        http: 8080
   postgresql:
     auth:
       password: <+serviceVariables.postgresqlPassword>
@@ -28,5 +30,3 @@ concourse:
         backend:
           service:
             name: concourse-svc
-            port:
-              name: 8080
