@@ -2,15 +2,15 @@ concourse:
   web:
     enabled: true
     # externalUrl: "192.168.1.101:8080"
+    containerPorts:
+      http: 8081
   worker:
     enabled: true
-    # containerPorts:
-    #   http: 8081
   service:
     web:
       type: NodePort
       ports:
-        http: 8081
+        http: 8080
   postgresql:
     auth:
       password: <+serviceVariables.postgresqlPassword>
@@ -19,7 +19,7 @@ concourse:
 
   ingress:
     enabled: true
-    # hostname: unjinxed.dev
+    hostname: 192.168.1.101
     annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /
         kubernetes.io/ingress.class: "nginx"
