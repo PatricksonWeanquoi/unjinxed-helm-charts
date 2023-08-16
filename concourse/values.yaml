@@ -20,7 +20,7 @@ concourse:
 
   ingress:
     enabled: true
-    hostname: "unjinxed.dev:8081"
+    hostname: "unjinxed.dev"
     pathType: Prefix
     path: /ci(/|$)(.*)
     annotations:
