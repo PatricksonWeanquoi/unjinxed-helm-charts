@@ -26,12 +26,11 @@ concourse:
         nginx.ingress.kubernetes.io/use-regex: "true"
         kubernetes.io/ingress.class: "nginx"
     extraRules:
-    - host: "unjinxed.dev:8081"
-      http:
-        path: /ci(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: concourse-svc
-            port: 
-              name: http
+      - host: "unjinxed.dev:8081"
+      - http:
+          path: /ci(/|$)(.*)
+          backend:
+            service:
+              name: concourse-svc
+              port: 
+                name: http
