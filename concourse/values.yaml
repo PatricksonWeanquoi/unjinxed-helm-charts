@@ -11,7 +11,7 @@ concourse:
     web:
       type: NodePort
       ports:
-        http: 8080
+        http: 8081
   postgresql:
     auth:
       password: <+serviceVariables.postgresqlPassword>
@@ -20,13 +20,13 @@ concourse:
 
   ingress:
     enabled: true
-    hostname: "unjinxed.dev:8080"
+    hostname: "unjinxed.dev:8081"
     annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /$2
         nginx.ingress.kubernetes.io/use-regex: "true"
         kubernetes.io/ingress.class: "nginx"
     extraRules:
-    - host: "unjinxed.dev:8080"
+    - host: "unjinxed.dev:8081"
       http:
         path: /ci(/|$)(.*)
         pathType: Prefix
@@ -34,4 +34,4 @@ concourse:
           service:
             name: concourse-svc
             port: 
-              number: 8080
+              number: 8081
