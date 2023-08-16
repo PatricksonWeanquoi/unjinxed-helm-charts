@@ -11,7 +11,7 @@ concourse:
     web:
       type: NodePort
       ports:
-        http: 8081
+        http: 8080
   postgresql:
     auth:
       password: <+serviceVariables.postgresqlPassword>
@@ -34,4 +34,4 @@ concourse:
           service:
             name: concourse-svc
             port: 
-              number: 8081
+              number: 8080
