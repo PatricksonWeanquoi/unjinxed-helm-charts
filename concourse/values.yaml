@@ -1,9 +1,10 @@
 concourse:
   web:
     enabled: true
-    # externalUrl: "192.168.1.101:8080"
-    containerPorts:
-      http: 8081
+    externalUrl: "unjinxed.dev:8080"
+    # baseUrl: "/ci"
+    # containerPorts:
+    #   http: 8081
   worker:
     enabled: true
   service:
@@ -19,14 +20,18 @@ concourse:
 
   ingress:
     enabled: true
-    hostname: 192.168.1.101
+    hostname: "unjinxed.dev:8080"
     annotations:
-        nginx.ingress.kubernetes.io/rewrite-target: /
+        nginx.ingress.kubernetes.io/rewrite-target: /$2
+        nginx.ingress.kubernetes.io/use-regex: "true"
         kubernetes.io/ingress.class: "nginx"
     extraRules:
-    - host: 192.168.1.101
+    - host: "unjinxed.dev:8080"
       http:
-        path: /
+        path: /ci(/|$)(.*)
+        pathType: Prefix
         backend:
           service:
             name: concourse-svc
+            port: 
+              number: 8080
