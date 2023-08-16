@@ -1,10 +1,10 @@
 concourse:
   web:
     enabled: true
-    externalUrl: "unjinxed.dev"
+    externalUrl: "unjinxed.dev:8080"
     # baseUrl: "/ci"
-    containerPorts:
-      http: 8081
+    # containerPorts:
+    #   http: 8081
   worker:
     enabled: true
   service:
