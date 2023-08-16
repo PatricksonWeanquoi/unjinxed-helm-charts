@@ -34,4 +34,4 @@ concourse:
           service:
             name: concourse-svc
             port: 
-              number: 8080
+              name: http
