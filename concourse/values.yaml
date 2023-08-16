@@ -4,7 +4,7 @@ concourse:
     externalUrl: "unjinxed.dev:8080"
     # baseUrl: "/ci"
     containerPorts:
-      http: 80
+      http: 8081
   worker:
     enabled: true
   service:
