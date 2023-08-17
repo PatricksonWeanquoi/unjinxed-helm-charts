@@ -13,7 +13,7 @@ concourse:
               users: ["<+serviceVariables.concourseUsername>"]
           - name: member
             local:
-              users: ["<+serviceVariables.concourseUsername>""]
+              users: ["<+serviceVariables.concourseUsername>"]
   worker:
     enabled: true
   service:
