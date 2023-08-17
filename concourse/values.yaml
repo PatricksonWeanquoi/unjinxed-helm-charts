@@ -21,9 +21,5 @@ concourse:
   ingress:
     enabled: true
     hostname: concourse.dev
-    pathType: Prefix
-    path: /ci(/|$)(.*)
     annotations:
-        nginx.ingress.kubernetes.io/rewrite-target: /$2
-        nginx.ingress.kubernetes.io/use-regex: "true"
         kubernetes.io/ingress.class: "nginx"
