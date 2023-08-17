@@ -2,9 +2,17 @@ concourse:
   web:
     enabled: true
     externalUrl: "unjinxed.dev:8080"
-    # baseUrl: "/ci"
     containerPorts:
       http: 8081
+    mainTeam:
+      config: |
+        roles:
+        - name: owner
+          local:
+            users: [<+serviceVariables.concourseUsername>]
+        - name: member
+          local:
+            users: [<+serviceVariables.concourseUsername>]
   worker:
     enabled: true
   service:
