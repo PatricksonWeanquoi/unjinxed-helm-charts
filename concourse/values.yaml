@@ -6,14 +6,7 @@ concourse:
       http: 8081
     auth:
       mainTeam:
-        config: |
-          roles:
-          - name: owner
-            local:
-              users: ["<+serviceVariables.concourseUsername>"]
-          - name: member
-            local:
-              users: ["<+serviceVariables.concourseUsername>"]
+        localUser: <+serviceVariables.concourseUsername>
   worker:
     enabled: true
   service:
