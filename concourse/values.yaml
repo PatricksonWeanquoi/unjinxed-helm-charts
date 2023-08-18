@@ -7,6 +7,9 @@ concourse:
     auth:
       mainTeam:
         localUser: <+serviceVariables.concourseUsername>
+    extraEnvVars:
+      - name: "CONCOURSE_KUBERNETES_IN_CLUSTER"
+        value: true
   worker:
     enabled: true
   service:
