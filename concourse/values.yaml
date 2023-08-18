@@ -8,10 +8,8 @@ concourse:
       mainTeam:
         localUser: <+serviceVariables.concourseUsername>
     extraEnvVars:
-      # - name: "CONCOURSE_KUBERNETES_IN_CLUSTER"
-      #   value: "true"
-      - name: "CONCOURSE_KUBERNETES_CONFIG_PATH"
-        value: "~/.kube/config"
+      - name: "CONCOURSE_KUBERNETES_IN_CLUSTER"
+        value: "true"
   worker:
     enabled: true
   service:
