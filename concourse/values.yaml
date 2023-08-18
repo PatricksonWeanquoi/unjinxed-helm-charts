@@ -10,6 +10,8 @@ concourse:
     extraEnvVars:
       - name: "CONCOURSE_KUBERNETES_IN_CLUSTER"
         value: "true"
+      - name: "CONCOURSE_KUBERNETES_CONFIG_PATH"
+        value: "~/.kube/config"
   worker:
     enabled: true
   service:
