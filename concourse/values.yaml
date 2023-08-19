@@ -12,7 +12,7 @@ concourse:
         value: "true"
     rules:
       - apiGroups:
-          - "*"
+          - "rbac.authorization.k8s.io"
         resources:
           - secrets
         verbs:
