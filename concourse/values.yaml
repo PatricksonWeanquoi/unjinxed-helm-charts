@@ -17,6 +17,8 @@ concourse:
           - secrets
         verbs:
           - get
+    serviceAccount:
+      name: concourse-web
   worker:
     enabled: true
   service:
