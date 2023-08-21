@@ -9,7 +9,7 @@ concourse:
         localUser: <+serviceVariables.concourseUsername>
     extraEnvVars:
       - name: "CONCOURSE_KUBERNETES_IN_CLUSTER"
-        value: "true"
+        value: "false"
     rules:
       - apiGroups:
           - ""
