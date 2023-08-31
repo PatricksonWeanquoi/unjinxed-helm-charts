@@ -10,14 +10,6 @@ concourse:
     extraEnvVars:
       - name: "CONCOURSE_KUBERNETES_IN_CLUSTER"
         value: "true"
-    rules:
-      - apiGroups:
-          - ""
-        resources:
-          - secrets
-        verbs:
-          - get
-          - list
   worker:
     enabled: true
   service:
